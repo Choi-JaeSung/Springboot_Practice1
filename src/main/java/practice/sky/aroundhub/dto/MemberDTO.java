@@ -55,5 +55,5 @@ public class MemberDTO
 }
 
 /*
-- IntelliJ 에서는 Alt + Insert 로 get, set, toString 등 여러 기본 Methods 를 자동 입력 가능
+- IntelliJ 에서는 Alt + Insert 로 get, set, toString 등 여러 기본 Methods 를 자동 입력 가능 (Intellij 의 Generator 기능)
  */

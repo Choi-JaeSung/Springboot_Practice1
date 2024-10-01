@@ -74,4 +74,5 @@ public class GetController
 /*
 - @PathVariable({variable}) : Overloading 과 같이 같은 기능을 하는 Method 위한 Mapping 방법 (ex: 회원가입시 필수 X 부분을 입력시 처리를 위해 Overloading 되었을 때 Mapping 가능)
 - @RequestParam : param 개수가 정해지면 수만큼 추가해주면 되겠지만, 모를 때에는 개수만큼 담을 자료구조를 제공한다 (ex: Map<>, ...)
+  >> 해당 데이터에 해당하는 Class 를 생성 후 적용 (ex: MemberDto (name, email, organization)
  */
