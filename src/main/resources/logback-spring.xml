@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">   <!-- logback 설정 확인하는 주기 -->
+    <property name="moduleId" value="around_hub_spring_boot"/>   <!-- moudleId는 프로젝트 폴더명 or 구별 가능한 식별자 -->
+    <property name="type" value="around_hub"/>   <!-- log 파일명 구성 -->
+    <property name="logback" value="logback"/>   <!-- log 저장할 최종 dir 명 -->
+    <property name="logdir" value="D:\Workspace\LogFiles"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">   <!-- class= : 사용할 appender 종류 지정 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+
+        <encoder>
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss:SSS}] [%-5level] [%thread] %logger{30} %msg%n</pattern>   <!-- %logger{int} : 사용 된 class 의 위치(package.package...) 길이 int 만큼 제한 -->
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>   <!-- ref= : appender 에서 설정한 appender name= 과 일치 -->
+
+    </root>
+</configuration>
+
+<!-- property : 사용할 변수 설정
+     %logger{int} 전 후 차이
+        - 전 : practice.sky.aroundhub.controller.ProductController_log
+        - 후 : p.s.a.c.ProductController_log
+        >> 불 필요한 class 의 package dir 축약
+-->
