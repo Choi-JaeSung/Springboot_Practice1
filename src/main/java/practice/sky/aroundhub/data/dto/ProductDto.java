@@ -1,5 +1,8 @@
 package practice.sky.aroundhub.data.dto;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import practice.sky.aroundhub.data.entity.ProductEntity;
 
@@ -10,9 +13,21 @@ import practice.sky.aroundhub.data.entity.ProductEntity;
 //@ToString
 @Builder
 public class ProductDto {
+    @NotNull
+//    @Size(min = 8, max = 8)   // 실제 데이터는 일정한 형식으로 코드를 부여하기 때문에 @Size 기능 활용 가능
     private String productId;
+
+    @NotNull
     private String productName;
+
+    @NotNull
+    @Min(value = 500)
+    @Max(value = 3000000)
     private int productPrice;
+
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 9999)
     private int productStock;
 
 

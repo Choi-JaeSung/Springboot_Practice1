@@ -32,7 +32,7 @@ public class ProductController_log
 
         ProductDto productDto = productService.getProduct(productId);
 
-        LOGGER.info("[ProductController_log] Response :: productId = {}, productName = {}, productPrice = {} productStock = {}, Response Time = {}ms",
+        LOGGER.info("[ProductController_log] Response :: productId = {}, productName = {}, productPrice = {}, productStock = {}, Response Time = {}ms",
                       productDto.getProductId(), productDto.getProductName(), productDto.getProductPrice(), productDto.getProductStock(), (System.currentTimeMillis() - startTime));
         return productService.getProduct(productId);
     }
